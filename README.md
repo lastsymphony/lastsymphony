@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://i.ibb.co/k1vR359/adityajatayu.jpg" alt="BaseSelfBot" width="500" />
+<img src="https://telegra.ph/file/63fdb803b25d1df34e7af.png" alt="Lastsymp" width="500" />
 
  👋 Hi, I’m [`@lastsymphony`](https://github.com/lastsymphony)
  👀 I’m interested in symphony
