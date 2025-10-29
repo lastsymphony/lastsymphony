@@ -52,13 +52,13 @@
 ---
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username={{USERNAME}}&theme=react-dark&hide_border=true&area=true" alt="Contribution Graph" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=lastsymphony&theme=react-dark&hide_border=true&area=true" alt="Contribution Graph" />
 </div>
 
 ---
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username={{USERNAME}}&theme=darkhub&no-frame=true&margin-w=15" alt="GitHub Trophies" />
+  <img src="https://github-profile-trophy.vercel.app/?username=lastsymphony&theme=darkhub&no-frame=true&margin-w=15" alt="GitHub Trophies" />
 </div>
 
 ---
@@ -78,7 +78,7 @@
     <p style="margin: 5px 0 0; color: #8b949e;">Top Language</p>
   </div>
   <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #161b22; border-radius: 8px; text-align: center;">
-    <h3 style="margin: 0; color: #58a6ff;">40</h3>
+    <h3 style="margin: 0; color: #58a6ff;">41</h3>
     <p style="margin: 5px 0 0; color: #8b949e;">Commits (30 days)</p>
   </div>
 </div>
@@ -216,10 +216,10 @@
 ---
 
 <div align="center">
-  <p>⏳ Last updated: <code>2025-10-29 18:00:46 WIB</code></p>
+  <p>⏳ Last updated: <code>2025-10-29 18:21:15 WIB</code></p>
   <p>Generated automatically with ❤️ • Stay hydrated 💧</p>
 </div>
 
 <div align="center">
-  <img src="https://profile-counter.glitch.me/{{USERNAME}}/count.svg" alt="Visitor Count" />
+  <img src="https://profile-counter.glitch.me/lastsymphony/count.svg" alt="Visitor Count" />
 </div>
