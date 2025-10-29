@@ -7,23 +7,13 @@
 
 ---
 
-### 🔥 Live Stats
-- ⏳ Last updated: `2025-10-29 05:10:12 WIB`
-- 🌐 Public repos: **63**
-- 👥 Followers: **2**
-- ⭐ Most used language: **JavaScript**
-- 📈 Total commits (last 30 days): **0**
-- 🔭 Latest public repo: **lastsymphony** (★ 0)
-
----
-
 ### 🛠 Tech I use
 <p align="left">
-  <img src="https://img.shields.io/badge/Node.js-000?style=for-the-badge&logo=node.js" />
-  <img src="https://img.shields.io/badge/JavaScript-000?style=for-the-badge&logo=javascript" />
-  <img src="https://img.shields.io/badge/Python-000?style=for-the-badge&logo=python" />
-  <img src="https://img.shields.io/badge/Cloudflare_Workers-000?style=for-the-badge&logo=cloudflare" />
-  <img src="https://img.shields.io/badge/WhatsApp_Bot-000?style=for-the-badge&logo=whatsapp" />
+  <img src="https://img.shields.io/badge/Node.js-000?style=for-the-badge&logo=node.js&logoColor=00ff00" />
+  <img src="https://img.shields.io/badge/JavaScript-000?style=for-the-badge&logo=javascript&logoColor=ffdf00" />
+  <img src="https://img.shields.io/badge/Python-000?style=for-the-badge&logo=python&logoColor=00a3e8" />
+  <img src="https://img.shields.io/badge/Cloudflare%20Workers-000?style=for-the-badge&logo=cloudflare" />
+  <img src="https://img.shields.io/badge/WhatsApp%20Bot-000?style=for-the-badge&logo=whatsapp&logoColor=25D366" />
 </p>
 
 ---
@@ -37,6 +27,13 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lastsymphony&layout=compact&theme=transparent" />
 </p>
 
+- ⏳ Last updated: `2025-10-29 12:21:08 WIB`
+- 🌐 Public repos: **63**
+- 👥 Followers: **2**
+- ⭐ Most used language: **JavaScript**
+- 📈 Total commits (last 30 days): **26**
+- 🔭 Latest public repo: **lastsymphony** (★ 0)
+
 ---
 
-<i>Generated automatically • last sync 2025-10-29 05:10:12 WIB</i>
+<i>Generated automatically • last sync 2025-10-29 12:21:08 WIB</i>
