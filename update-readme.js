@@ -205,7 +205,7 @@ function buildFocusCard() {
 function buildVisitorCounter() {
   return `
 <div align="center">
-  <img src="https://profile-counter.glitch.me/{{USERNAME}}/count.svg" alt="Visitor Count" />
+  <img src="https://profile-counter.glitch.me/lastsymphony/count.svg" alt="Visitor Count" />
 </div>
   `.trim();
 }
@@ -214,7 +214,7 @@ function buildVisitorCounter() {
 function buildContributionGraph() {
   return `
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username={{USERNAME}}&theme=react-dark&hide_border=true&area=true" alt="Contribution Graph" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=lastsymphony&theme=react-dark&hide_border=true&area=true" alt="Contribution Graph" />
 </div>
   `.trim();
 }
@@ -223,7 +223,7 @@ function buildContributionGraph() {
 function buildTrophySection() {
   return `
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username={{USERNAME}}&theme=darkhub&no-frame=true&margin-w=15" alt="GitHub Trophies" />
+  <img src="https://github-profile-trophy.vercel.app/?username=lastsymphony&theme=darkhub&no-frame=true&margin-w=15" alt="GitHub Trophies" />
 </div>
   `.trim();
 }
@@ -285,8 +285,8 @@ function getTemplate() {
 </p>
 
 <p align="center">
-  <a href="https://github.com/{{USERNAME}}"><img src="https://img.shields.io/github/followers/{{USERNAME}}?label=Followers&style=social" alt="Followers"></a>
-  <a href="https://github.com/{{USERNAME}}"><img src="https://img.shields.io/github/stars/{{USERNAME}}?label=Stars&style=social" alt="Stars"></a>
+  <a href="https://github.com/lastsymphony"><img src="https://img.shields.io/github/followers/lastsymphony?label=Followers&style=social" alt="Followers"></a>
+  <a href="https://github.com/lastsymphony"><img src="https://img.shields.io/github/stars/lastsymphony?label=Stars&style=social" alt="Stars"></a>
   {{TWITTER_BADGE}}
   {{BLOG_BADGE}}
 </p>
@@ -303,15 +303,15 @@ function getTemplate() {
 <h2 align="center">📊 GitHub Activity</h2>
 <div style="padding: 20px; background-color: #0d1117; border-radius: 10px; border: 1px solid #21262d;">
   <p align="center">
-    <img src="https://github-readme-streak-stats.herokuapp.com?user={{USERNAME}}&theme=dark&hide_border=true&background=0D1117&stroke=21262D&ring=58A6FF&fire=FF6B6B&currStreakLabel=58A6FF" alt="GitHub Streak" />
+    <img src="https://github-readme-streak-stats.herokuapp.com?user=lastsymphony&theme=dark&hide_border=true&background=0D1117&stroke=21262D&ring=58A6FF&fire=FF6B6B&currStreakLabel=58A6FF" alt="GitHub Streak" />
   </p>
 
   <p align="center">
-    <img src="https://github-readme-stats.vercel.app/api?username={{USERNAME}}&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9" alt="GitHub Stats" />
+    <img src="https://github-readme-stats.vercel.app/api?username=lastsymphony&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9" alt="GitHub Stats" />
   </p>
 
   <p align="center">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username={{USERNAME}}&layout=compact&theme=dark&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=C9D1D9" alt="Top Languages" />
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lastsymphony&layout=compact&theme=dark&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=C9D1D9" alt="Top Languages" />
   </p>
 </div>
 
@@ -357,13 +357,13 @@ function getTemplate() {
       </svg>
     </div>
     <div>
-      <h3 style="margin: 0; font-size: 20px;"><a href="https://github.com/{{USERNAME}}/{{LATEST_REPO_NAME}}" style="color: #58a6ff; text-decoration: none;">{{LATEST_REPO_NAME}}</a></h3>
+      <h3 style="margin: 0; font-size: 20px;"><a href="https://github.com/lastsymphony/{{LATEST_REPO_NAME}}" style="color: #58a6ff; text-decoration: none;">{{LATEST_REPO_NAME}}</a></h3>
       <p style="margin: 5px 0; color: #8b949e;">Last updated repository</p>
     </div>
   </div>
   <div style="display: flex; gap: 15px; color: #c9d1d9;">
     <span>⭐ {{LATEST_REPO_STARS}} stars</span>
-    <span>🔗 <a href="https://github.com/{{USERNAME}}/{{LATEST_REPO_NAME}}" style="color: #58a6ff;">View Repository</a></span>
+    <span>🔗 <a href="https://github.com/lastsymphony/{{LATEST_REPO_NAME}}" style="color: #58a6ff;">View Repository</a></span>
   </div>
 </div>
 
@@ -379,7 +379,7 @@ function getTemplate() {
 
 <div align="center">
   <h3>📊 Weekly Development Breakdown</h3>
-  <img src="https://raw.githubusercontent.com/{{USERNAME}}/{{USERNAME}}/output/github-contribution-grid-snake.svg" alt="Snake Animation" />
+  <img src="https://raw.githubusercontent.com/lastsymphony/lastsymphony/output/github-contribution-grid-snake.svg" alt="Snake Animation" />
 </div>
 
 ---
