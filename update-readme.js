@@ -3,7 +3,7 @@ const axios = require("axios");
 const dayjs = require("dayjs");
 
 const USERNAME = "lastsymphony"; // <- GANTI
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN; 
+const API_KEY = process.env.API_KEY; 
 // tambahin ke secret repo nanti biar rate limit aman
 
 async function fetchUser() {
@@ -87,7 +87,7 @@ function buildTechBadges() {
 
 function authHeader() {
   // Boleh tanpa token, tapi rate limit kecil.
-  return GITHUB_TOKEN
+  return API_KEY
     ? {
         Authorization: `Bearer ${GITHUB_TOKEN}`,
         "User-Agent": USERNAME,
