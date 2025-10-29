@@ -2,15 +2,22 @@ const fs = require("fs");
 const axios = require("axios");
 const dayjs = require("dayjs");
 
-const USERNAME = "lastsymphony"; // <- GANTI
-const API_KEY = process.env.API_KEY; 
-// tambahin ke secret repo nanti biar rate limit aman
+// Ambil username otomatis dari repo GitHub Actions (atau fallback)
+const USERNAME = process.env.GITHUB_REPOSITORY
+  ? process.env.GITHUB_REPOSITORY.split("/")[0]
+  : "lastsymphony";
+
+const API_KEY = process.env.API_KEY; // pakai ini sekarang
+
+function authHeader() {
+  return API_KEY
+    ? { Authorization: `Bearer ${API_KEY}`, "User-Agent": USERNAME }
+    : { "User-Agent": USERNAME };
+}
 
 async function fetchUser() {
   const url = `https://api.github.com/users/${USERNAME}`;
-  const { data } = await axios.get(url, {
-    headers: authHeader(),
-  });
+  const { data } = await axios.get(url, { headers: authHeader() });
   return {
     name: data.name || USERNAME,
     bio: data.bio || "",
@@ -20,16 +27,10 @@ async function fetchUser() {
 }
 
 async function fetchRepos() {
-  // ambil semua public repos (max 100)
   const url = `https://api.github.com/users/${USERNAME}/repos?per_page=100&sort=updated`;
-  const { data } = await axios.get(url, {
-    headers: authHeader(),
-  });
+  const { data } = await axios.get(url, { headers: authHeader() });
 
-  // repo terbaru = index 0 (karena sort=updated desc)
   const latest = data[0] || {};
-
-  // hitung bahasa populer
   const langCount = {};
   for (const repo of data) {
     if (!repo.fork && repo.language) {
@@ -49,21 +50,15 @@ async function fetchRepos() {
 }
 
 async function fetchRecentCommitsApprox() {
-  // GitHub public events (push events)
   const url = `https://api.github.com/users/${USERNAME}/events/public?per_page=100`;
-  const { data } = await axios.get(url, {
-    headers: authHeader(),
-  });
+  const { data } = await axios.get(url, { headers: authHeader() });
 
   const cutoff = dayjs().subtract(30, "day");
   let commits = 0;
 
   for (const ev of data) {
-    if (ev.type === "PushEvent") {
-      const created = dayjs(ev.created_at);
-      if (created.isAfter(cutoff)) {
-        commits += ev.payload.size || 0; // size = commit count in that push
-      }
+    if (ev.type === "PushEvent" && dayjs(ev.created_at).isAfter(cutoff)) {
+      commits += ev.payload.size || 0;
     }
   }
 
@@ -71,34 +66,19 @@ async function fetchRecentCommitsApprox() {
 }
 
 function buildTechBadges() {
-  // kamu boleh custom di sini atau langsung tulis fix di template dan hapus placeholder
   return [
     "https://img.shields.io/badge/Node.js-000?style=for-the-badge&logo=node.js",
     "https://img.shields.io/badge/JavaScript-000?style=for-the-badge&logo=javascript",
     "https://img.shields.io/badge/Python-000?style=for-the-badge&logo=python",
     "https://img.shields.io/badge/Cloudflare_Workers-000?style=for-the-badge&logo=cloudflare",
-    "https://img.shields.io/badge/WhatsApp_Bot-000?style=for-the-badge&logo=whatsapp"
+    "https://img.shields.io/badge/WhatsApp_Bot-000?style=for-the-badge&logo=whatsapp",
   ]
-    .map(
-      (src) => `<img src="${src}" />`
-    )
+    .map((src) => `<img src="${src}" />`)
     .join("\n  ");
 }
 
-function authHeader() {
-  // Boleh tanpa token, tapi rate limit kecil.
-  return API_KEY
-    ? {
-        Authorization: `Bearer ${GITHUB_TOKEN}`,
-        "User-Agent": USERNAME,
-      }
-    : {
-        "User-Agent": USERNAME,
-      };
-}
-
 async function main() {
-  console.log("⏳ Generating README...");
+  console.log(`🚀 Generating README for ${USERNAME}...`);
 
   const [user, repos, recentCommits] = await Promise.all([
     fetchUser(),
@@ -110,7 +90,7 @@ async function main() {
 
   const rendered = template
     .replace(/{{NAME}}/g, user.name)
-    .replace(/{{TAGLINE}}/g, "Full-stack automation & bot engineer 🤖")
+    .replace(/{{TAGLINE}}/g, "Engineer & maintainer bot/web 🌌")
     .replace(/{{BIO}}/g, user.bio || "No bio set")
     .replace(/{{LAST_UPDATE}}/g, dayjs().format("YYYY-MM-DD HH:mm:ss") + " WIB")
     .replace(/{{PUBLIC_REPOS}}/g, String(user.publicRepos))
@@ -123,10 +103,10 @@ async function main() {
     .replace(/{{TECH_BADGES}}/g, `<p align="left">\n  ${buildTechBadges()}\n</p>`);
 
   fs.writeFileSync("./README.md", rendered);
-  console.log("✅ README.md updated.");
+  console.log("✅ README.md updated successfully.");
 }
 
 main().catch((err) => {
-  console.error("❌ Failed to update README:", err.message);
+  console.error("❌ Error updating README:", err.message);
   process.exit(1);
 });
