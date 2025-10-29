@@ -1,0 +1,13 @@
+{
+  "name": "github-profile-updater",
+  "version": "1.0.0",
+  "description": "Auto update GitHub profile README",
+  "main": "update-readme.js",
+  "scripts": {
+    "start": "node update-readme.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "dayjs": "^1.11.11"
+  }
+}
