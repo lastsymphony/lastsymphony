@@ -48,9 +48,9 @@
 <h2>🛰 Latest Public Repo</h2>
 <div style="border:1px solid #3a3a3a; border-radius:8px; padding:16px; background:#0d1117;">
   <p>
-    <b>📦 Repo:</b> <code>Iggenshin</code><br/>
+    <b>📦 Repo:</b> <code>lastsymphony</code><br/>
     <b>⭐ Stars:</b> 0<br/>
-    <b>🔗 URL:</b> https://github.com/lastsymphony/Iggenshin
+    <b>🔗 URL:</b> https://github.com/lastsymphony/lastsymphony
   </p>
 </div>
 
@@ -69,7 +69,7 @@
 ---
 
 <p align="center">
-  <sub>⏳ Last updated: <code>2025-10-29 15:14:34 WIB</code></sub>
+  <sub>⏳ Last updated: <code>2025-10-29 17:11:34 WIB</code></sub>
 </p>
 
 <p align="center">
