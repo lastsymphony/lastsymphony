@@ -36,10 +36,10 @@
 <h2>📚 Profile Overview</h2>
 <div style="border:1px solid #3a3a3a; border-radius:8px; padding:16px; background:#0d1117;">
   <ul>
-    <li>🌐 <b>Public repos:</b> 63</li>
+    <li>🌐 <b>Public repos:</b> 64</li>
     <li>👥 <b>Followers:</b> 2</li>
     <li>⭐ <b>Most used language:</b> JavaScript</li>
-    <li>📈 <b>Total commits (last 30 days):</b> 28</li>
+    <li>📈 <b>Total commits (last 30 days):</b> 37</li>
   </ul>
 </div>
 
@@ -48,9 +48,9 @@
 <h2>🛰 Latest Public Repo</h2>
 <div style="border:1px solid #3a3a3a; border-radius:8px; padding:16px; background:#0d1117;">
   <p>
-    <b>📦 Repo:</b> <code>lastsymphony</code><br/>
+    <b>📦 Repo:</b> <code>Iggenshin</code><br/>
     <b>⭐ Stars:</b> 0<br/>
-    <b>🔗 URL:</b> https://github.com/lastsymphony/lastsymphony
+    <b>🔗 URL:</b> https://github.com/lastsymphony/Iggenshin
   </p>
 </div>
 
@@ -69,7 +69,7 @@
 ---
 
 <p align="center">
-  <sub>⏳ Last updated: <code>2025-10-29 12:31:56 WIB</code></sub>
+  <sub>⏳ Last updated: <code>2025-10-29 13:15:47 WIB</code></sub>
 </p>
 
 <p align="center">
