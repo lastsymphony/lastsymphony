@@ -1,7 +1,7 @@
 {
-  "name": "github-profile-updater",
+  "name": "github-auto-profile",
   "version": "1.0.0",
-  "description": "Auto update GitHub profile README",
+  "description": "Auto update GitHub profile README for lastsymphony",
   "main": "update-readme.js",
   "scripts": {
     "start": "node update-readme.js"
