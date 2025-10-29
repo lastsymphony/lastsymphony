@@ -1,12 +1,23 @@
 const fs = require("fs");
 const axios = require("axios");
 const dayjs = require("dayjs");
+const utc = require("dayjs/plugin/utc");
+const timezone = require("dayjs/plugin/timezone");
 
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
+// pakai username otomatis dari repo, fallback ke lastsymphony
 const USERNAME = process.env.GITHUB_REPOSITORY
   ? process.env.GITHUB_REPOSITORY.split("/")[0]
   : "lastsymphony";
 
 const API_KEY = process.env.API_KEY;
+
+// timezone lokal (WIB = Asia/Jakarta)
+function nowWIB() {
+  return dayjs().tz("Asia/Jakarta").format("YYYY-MM-DD HH:mm:ss") + " WIB";
+}
 
 function authHeader() {
   return API_KEY
@@ -14,6 +25,7 @@ function authHeader() {
     : { "User-Agent": USERNAME };
 }
 
+// 1. Info user
 async function fetchUser() {
   const url = `https://api.github.com/users/${USERNAME}`;
   const { data } = await axios.get(url, { headers: authHeader() });
@@ -25,6 +37,7 @@ async function fetchUser() {
   };
 }
 
+// 2. Info repo: latest repo, top language
 async function fetchRepos() {
   const url = `https://api.github.com/users/${USERNAME}/repos?per_page=100&sort=updated`;
   const { data } = await axios.get(url, { headers: authHeader() });
@@ -43,59 +56,85 @@ async function fetchRepos() {
     .map(([lang]) => lang)[0] || "Unknown";
 
   return {
+    reposList: data, // kirim full buat dipakai fungsi commit counter
     topLanguage,
     latestRepoName: latest.name || "-",
     latestRepoStars: latest.stargazers_count || 0,
   };
 }
 
-async function fetchRecentCommitsApprox() {
-  const url = `https://api.github.com/users/${USERNAME}/events/public?per_page=100`;
-  const { data } = await axios.get(url, { headers: authHeader() });
+// 3. Komputasi commit 30 hari terakhir (lebih akurat)
+async function fetchRecentCommitsAccurate(reposList) {
+  // batas 30 hari lalu (WIB -> convert ke ISO)
+  const sinceISO = dayjs().subtract(30, "day").toISOString();
 
-  const cutoff = dayjs().subtract(30, "day");
-  let commits = 0;
+  let commitTotal = 0;
+  const seen = new Set(); // jangan hitung SHA yang duplikat
 
-  for (const ev of data) {
-    if (ev.type === "PushEvent" && dayjs(ev.created_at).isAfter(cutoff)) {
-      commits += ev.payload.size || 0;
+  // loop repo publik kamu
+  for (const repo of reposList) {
+    if (repo.fork) continue; // skip fork biar ga noise
+    if (repo.private) continue; // gha bakal ada tapi jaga2
+
+    const repoName = repo.name;
+
+    // GET /repos/:owner/:repo/commits?author=:username&since=...
+    const commitsUrl = `https://api.github.com/repos/${USERNAME}/${repoName}/commits?author=${USERNAME}&since=${encodeURIComponent(
+      sinceISO
+    )}&per_page=100`;
+
+    try {
+      const { data } = await axios.get(commitsUrl, { headers: authHeader() });
+
+      for (const c of data) {
+        if (!c || !c.sha) continue;
+        if (!seen.has(c.sha)) {
+          seen.add(c.sha);
+          commitTotal += 1;
+        }
+      }
+    } catch (err) {
+      // repo mungkin gak punya commit kamu sendiri -> 404/empty itu normal
+      // kita abaikan error 409 (empty repo) / 404 dsb supaya workflow nggak mati
+      if (
+        err.response &&
+        [404, 409].includes(err.response.status)
+      ) {
+        continue;
+      } else {
+        console.log(
+          `⚠️  gagal ambil commits untuk ${repoName}: ${err.message}`
+        );
+      }
     }
   }
 
-  return commits;
+  return commitTotal;
 }
 
 function buildTechBadges() {
-  return [
-    "https://img.shields.io/badge/Node.js-000?style=for-the-badge&logo=node.js",
-    "https://img.shields.io/badge/JavaScript-000?style=for-the-badge&logo=javascript",
-    "https://img.shields.io/badge/Python-000?style=for-the-badge&logo=python",
-    "https://img.shields.io/badge/Cloudflare_Workers-000?style=for-the-badge&logo=cloudflare",
-    "https://img.shields.io/badge/WhatsApp_Bot-000?style=for-the-badge&logo=whatsapp"
-  ]
-    .map(src => `<img src="${src}" />`)
-    .join("\n  ");
+  // gaya mirip screenshot kamu: kotak hitam badge per skill
+  // (di README final dia bakal nerender jadi baris2)
+  return `
+<p align="left">
+  <img src="https://img.shields.io/badge/Node.js-000?style=for-the-badge&logo=node.js&logoColor=00ff00" />
+  <img src="https://img.shields.io/badge/JavaScript-000?style=for-the-badge&logo=javascript&logoColor=ffdf00" />
+  <img src="https://img.shields.io/badge/Python-000?style=for-the-badge&logo=python&logoColor=00a3e8" />
+  <img src="https://img.shields.io/badge/Cloudflare%20Workers-000?style=for-the-badge&logo=cloudflare" />
+  <img src="https://img.shields.io/badge/WhatsApp%20Bot-000?style=for-the-badge&logo=whatsapp&logoColor=25D366" />
+</p>
+`.trim();
 }
 
-// 👉 Template disimpan langsung di variabel, jadi gak perlu README.template.md
+// Template README yang akan dirender
 function getTemplate() {
   return `
 <h1 align="center">Hi, I'm {{NAME}} 👋</h1>
 
 <p align="center">
-  <b>{{TAGLINE}}</b><br/>
+  <b>Engineer & maintainer bot/web 🌌</b><br/>
   <i>{{BIO}}</i>
 </p>
-
----
-
-### 🔥 Live Stats
-- ⏳ Last updated: \`{{LAST_UPDATE}}\`
-- 🌐 Public repos: **{{PUBLIC_REPOS}}**
-- 👥 Followers: **{{FOLLOWERS}}**
-- ⭐ Most used language: **{{TOP_LANGUAGE}}**
-- 📈 Total commits (last 30 days): **{{RECENT_COMMITS}}**
-- 🔭 Latest public repo: **{{LATEST_REPO_NAME}}** (★ {{LATEST_REPO_STARS}})
 
 ---
 
@@ -113,6 +152,13 @@ function getTemplate() {
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username={{USERNAME}}&layout=compact&theme=transparent" />
 </p>
 
+- ⏳ Last updated: \`{{LAST_UPDATE}}\`
+- 🌐 Public repos: **{{PUBLIC_REPOS}}**
+- 👥 Followers: **{{FOLLOWERS}}**
+- ⭐ Most used language: **{{TOP_LANGUAGE}}**
+- 📈 Total commits (last 30 days): **{{RECENT_COMMITS}}**
+- 🔭 Latest public repo: **{{LATEST_REPO_NAME}}** (★ {{LATEST_REPO_STARS}})
+
 ---
 
 <i>Generated automatically • last sync {{LAST_UPDATE}}</i>
@@ -122,33 +168,31 @@ function getTemplate() {
 async function main() {
   console.log(`🚀 Generating README for ${USERNAME}...`);
 
-  const [user, repos, recentCommits] = await Promise.all([
+  const [user, repoInfo] = await Promise.all([
     fetchUser(),
     fetchRepos(),
-    fetchRecentCommitsApprox(),
   ]);
 
-  const template = getTemplate();
+  const recentCommits = await fetchRecentCommitsAccurate(repoInfo.reposList);
 
-  const rendered = template
+  const rendered = getTemplate()
     .replace(/{{NAME}}/g, user.name)
-    .replace(/{{TAGLINE}}/g, "Engineer & maintainer bot/web 🌌")
     .replace(/{{BIO}}/g, user.bio || "No bio set")
-    .replace(/{{LAST_UPDATE}}/g, dayjs().format("YYYY-MM-DD HH:mm:ss") + " WIB")
+    .replace(/{{LAST_UPDATE}}/g, nowWIB())
     .replace(/{{PUBLIC_REPOS}}/g, String(user.publicRepos))
     .replace(/{{FOLLOWERS}}/g, String(user.followers))
-    .replace(/{{TOP_LANGUAGE}}/g, repos.topLanguage)
+    .replace(/{{TOP_LANGUAGE}}/g, repoInfo.topLanguage)
     .replace(/{{RECENT_COMMITS}}/g, String(recentCommits))
-    .replace(/{{LATEST_REPO_NAME}}/g, repos.latestRepoName)
-    .replace(/{{LATEST_REPO_STARS}}/g, String(repos.latestRepoStars))
+    .replace(/{{LATEST_REPO_NAME}}/g, repoInfo.latestRepoName)
+    .replace(/{{LATEST_REPO_STARS}}/g, String(repoInfo.latestRepoStars))
     .replace(/{{USERNAME}}/g, USERNAME)
-    .replace(/{{TECH_BADGES}}/g, `<p align="left">\n  ${buildTechBadges()}\n</p>`);
+    .replace(/{{TECH_BADGES}}/g, buildTechBadges());
 
   fs.writeFileSync("./README.md", rendered);
   console.log("✅ README.md updated successfully.");
 }
 
-main().catch(err => {
+main().catch((err) => {
   console.error("❌ Error updating README:", err.message);
   process.exit(1);
 });
