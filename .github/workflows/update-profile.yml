@@ -1,41 +1,40 @@
-name: Update GitHub Profile README
+name: Auto Update Profile
 
 on:
   schedule:
-    - cron: "0 * * * *"  # jalan tiap jam (UTC)
-  workflow_dispatch:      # bisa manual run dari tab Actions
+    - cron: "0 */2 * * *" # jalan tiap 2 jam
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           persist-credentials: false
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
-      - name: Install deps
+      - name: Install dependencies
         run: npm install
 
       - name: Generate README
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          API_KEY: ${{ secrets.API_KEY }}
         run: npm start
 
-      - name: Commit & push if changed
+      - name: Commit & Push if changed
         run: |
-          git config user.name "profile-bot"
+          git config user.name "auto-profile"
           git config user.email "actions@github.com"
           if [[ `git status --porcelain README.md` ]]; then
             git add README.md
-            git commit -m "chore: auto update README [skip ci]"
-            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+            git commit -m "auto: update profile [skip ci]"
+            git push https://x-access-token:${{ secrets.API_KEY }}@github.com/${{ github.repository }}.git HEAD:main
           else
-            echo "no changes"
+            echo "No changes detected"
           fi
