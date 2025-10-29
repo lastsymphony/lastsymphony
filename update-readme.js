@@ -2,12 +2,11 @@ const fs = require("fs");
 const axios = require("axios");
 const dayjs = require("dayjs");
 
-// Ambil username otomatis dari repo GitHub Actions (atau fallback)
 const USERNAME = process.env.GITHUB_REPOSITORY
   ? process.env.GITHUB_REPOSITORY.split("/")[0]
   : "lastsymphony";
 
-const API_KEY = process.env.API_KEY; // pakai ini sekarang
+const API_KEY = process.env.API_KEY;
 
 function authHeader() {
   return API_KEY
@@ -31,6 +30,7 @@ async function fetchRepos() {
   const { data } = await axios.get(url, { headers: authHeader() });
 
   const latest = data[0] || {};
+
   const langCount = {};
   for (const repo of data) {
     if (!repo.fork && repo.language) {
@@ -71,10 +71,52 @@ function buildTechBadges() {
     "https://img.shields.io/badge/JavaScript-000?style=for-the-badge&logo=javascript",
     "https://img.shields.io/badge/Python-000?style=for-the-badge&logo=python",
     "https://img.shields.io/badge/Cloudflare_Workers-000?style=for-the-badge&logo=cloudflare",
-    "https://img.shields.io/badge/WhatsApp_Bot-000?style=for-the-badge&logo=whatsapp",
+    "https://img.shields.io/badge/WhatsApp_Bot-000?style=for-the-badge&logo=whatsapp"
   ]
-    .map((src) => `<img src="${src}" />`)
+    .map(src => `<img src="${src}" />`)
     .join("\n  ");
+}
+
+// 👉 Template disimpan langsung di variabel, jadi gak perlu README.template.md
+function getTemplate() {
+  return `
+<h1 align="center">Hi, I'm {{NAME}} 👋</h1>
+
+<p align="center">
+  <b>{{TAGLINE}}</b><br/>
+  <i>{{BIO}}</i>
+</p>
+
+---
+
+### 🔥 Live Stats
+- ⏳ Last updated: \`{{LAST_UPDATE}}\`
+- 🌐 Public repos: **{{PUBLIC_REPOS}}**
+- 👥 Followers: **{{FOLLOWERS}}**
+- ⭐ Most used language: **{{TOP_LANGUAGE}}**
+- 📈 Total commits (last 30 days): **{{RECENT_COMMITS}}**
+- 🔭 Latest public repo: **{{LATEST_REPO_NAME}}** (★ {{LATEST_REPO_STARS}})
+
+---
+
+### 🛠 Tech I use
+{{TECH_BADGES}}
+
+---
+
+### 📊 GitHub Activity
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com?user={{USERNAME}}&theme=transparent" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username={{USERNAME}}&layout=compact&theme=transparent" />
+</p>
+
+---
+
+<i>Generated automatically • last sync {{LAST_UPDATE}}</i>
+`.trim() + "\n";
 }
 
 async function main() {
@@ -86,7 +128,7 @@ async function main() {
     fetchRecentCommitsApprox(),
   ]);
 
-  const template = fs.readFileSync("./README.template.md", "utf8");
+  const template = getTemplate();
 
   const rendered = template
     .replace(/{{NAME}}/g, user.name)
@@ -106,7 +148,7 @@ async function main() {
   console.log("✅ README.md updated successfully.");
 }
 
-main().catch((err) => {
+main().catch(err => {
   console.error("❌ Error updating README:", err.message);
   process.exit(1);
 });
