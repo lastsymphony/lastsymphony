@@ -66,7 +66,7 @@
 <h2 align="center">📈 Profile Overview</h2>
 <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 20px; background-color: #0d1117; border-radius: 10px; border: 1px solid #21262d;">
   <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #161b22; border-radius: 8px; text-align: center;">
-    <h3 style="margin: 0; color: #58a6ff;">65</h3>
+    <h3 style="margin: 0; color: #58a6ff;">66</h3>
     <p style="margin: 5px 0 0; color: #8b949e;">Public Repos</p>
   </div>
   <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #161b22; border-radius: 8px; text-align: center;">
@@ -78,7 +78,7 @@
     <p style="margin: 5px 0 0; color: #8b949e;">Top Language</p>
   </div>
   <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #161b22; border-radius: 8px; text-align: center;">
-    <h3 style="margin: 0; color: #58a6ff;">56</h3>
+    <h3 style="margin: 0; color: #58a6ff;">73</h3>
     <p style="margin: 5px 0 0; color: #8b949e;">Commits (30 days)</p>
   </div>
 </div>
@@ -95,13 +95,13 @@
       </svg>
     </div>
     <div>
-      <h3 style="margin: 0; font-size: 20px;"><a href="https://github.com/lastsymphony/lastsymphony" style="color: #58a6ff; text-decoration: none;">lastsymphony</a></h3>
+      <h3 style="margin: 0; font-size: 20px;"><a href="https://github.com/lastsymphony/Testerweb" style="color: #58a6ff; text-decoration: none;">Testerweb</a></h3>
       <p style="margin: 5px 0; color: #8b949e;">Last updated repository</p>
     </div>
   </div>
   <div style="display: flex; gap: 15px; color: #c9d1d9;">
     <span>⭐ 0 stars</span>
-    <span>🔗 <a href="https://github.com/lastsymphony/lastsymphony" style="color: #58a6ff;">View Repository</a></span>
+    <span>🔗 <a href="https://github.com/lastsymphony/Testerweb" style="color: #58a6ff;">View Repository</a></span>
   </div>
 </div>
 
@@ -144,11 +144,11 @@
         </svg>
       </div>
       <div>
-        <h4 style="margin: 0; font-size: 16px;"><a href="https://github.com/lastsymphony/lastsymphony" style="color: #58a6ff; text-decoration: none;">lastsymphony</a></h4>
-        <p style="margin: 0; color: #8b949e; font-size: 12px;">JavaScript</p>
+        <h4 style="margin: 0; font-size: 16px;"><a href="https://github.com/lastsymphony/Testerweb" style="color: #58a6ff; text-decoration: none;">Testerweb</a></h4>
+        <p style="margin: 0; color: #8b949e; font-size: 12px;">HTML</p>
       </div>
     </div>
-    <p style="margin: 10px 0; color: #c9d1d9; font-size: 14px;">Config files for my GitHub profile.</p>
+    <p style="margin: 10px 0; color: #c9d1d9; font-size: 14px;">No description available</p>
     <div style="display: flex; justify-content: space-between; color: #8b949e; font-size: 12px;">
       <span>⭐ 0</span>
       <span>🍴 0</span>
@@ -165,11 +165,11 @@
         </svg>
       </div>
       <div>
-        <h4 style="margin: 0; font-size: 16px;"><a href="https://github.com/lastsymphony/Reduceimg" style="color: #58a6ff; text-decoration: none;">Reduceimg</a></h4>
-        <p style="margin: 0; color: #8b949e; font-size: 12px;">HTML</p>
+        <h4 style="margin: 0; font-size: 16px;"><a href="https://github.com/lastsymphony/lastsymphony" style="color: #58a6ff; text-decoration: none;">lastsymphony</a></h4>
+        <p style="margin: 0; color: #8b949e; font-size: 12px;">JavaScript</p>
       </div>
     </div>
-    <p style="margin: 10px 0; color: #c9d1d9; font-size: 14px;">No description available</p>
+    <p style="margin: 10px 0; color: #c9d1d9; font-size: 14px;">Config files for my GitHub profile.</p>
     <div style="display: flex; justify-content: space-between; color: #8b949e; font-size: 12px;">
       <span>⭐ 0</span>
       <span>🍴 0</span>
@@ -216,7 +216,7 @@
 ---
 
 <div align="center">
-  <p>⏳ Last updated: <code>2025-11-03 01:11:25 WIB</code></p>
+  <p>⏳ Last updated: <code>2025-11-03 03:09:26 WIB</code></p>
   <p>Generated automatically with ❤️ • Stay hydrated 💧</p>
 </div>
 
