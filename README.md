@@ -78,7 +78,7 @@
     <p style="margin: 5px 0 0; color: #8b949e;">Top Language</p>
   </div>
   <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #161b22; border-radius: 8px; text-align: center;">
-    <h3 style="margin: 0; color: #58a6ff;">73</h3>
+    <h3 style="margin: 0; color: #58a6ff;">79</h3>
     <p style="margin: 5px 0 0; color: #8b949e;">Commits (30 days)</p>
   </div>
 </div>
@@ -123,15 +123,15 @@
         </svg>
       </div>
       <div>
-        <h4 style="margin: 0; font-size: 16px;"><a href="https://github.com/lastsymphony/log" style="color: #58a6ff; text-decoration: none;">log</a></h4>
-        <p style="margin: 0; color: #8b949e; font-size: 12px;">Unknown</p>
+        <h4 style="margin: 0; font-size: 16px;"><a href="https://github.com/lastsymphony/Testerweb" style="color: #58a6ff; text-decoration: none;">Testerweb</a></h4>
+        <p style="margin: 0; color: #8b949e; font-size: 12px;">HTML</p>
       </div>
     </div>
     <p style="margin: 10px 0; color: #c9d1d9; font-size: 14px;">No description available</p>
     <div style="display: flex; justify-content: space-between; color: #8b949e; font-size: 12px;">
-      <span>⭐ 1</span>
+      <span>⭐ 0</span>
       <span>🍴 0</span>
-      <span>👁️ 1</span>
+      <span>👁️ 0</span>
     </div>
   </div>
 
@@ -144,8 +144,8 @@
         </svg>
       </div>
       <div>
-        <h4 style="margin: 0; font-size: 16px;"><a href="https://github.com/lastsymphony/Testerweb" style="color: #58a6ff; text-decoration: none;">Testerweb</a></h4>
-        <p style="margin: 0; color: #8b949e; font-size: 12px;">HTML</p>
+        <h4 style="margin: 0; font-size: 16px;"><a href="https://github.com/lastsymphony/log" style="color: #58a6ff; text-decoration: none;">log</a></h4>
+        <p style="margin: 0; color: #8b949e; font-size: 12px;">Unknown</p>
       </div>
     </div>
     <p style="margin: 10px 0; color: #c9d1d9; font-size: 14px;">No description available</p>
@@ -216,7 +216,7 @@
 ---
 
 <div align="center">
-  <p>⏳ Last updated: <code>2025-11-03 03:09:26 WIB</code></p>
+  <p>⏳ Last updated: <code>2025-11-03 05:08:23 WIB</code></p>
   <p>Generated automatically with ❤️ • Stay hydrated 💧</p>
 </div>
 
