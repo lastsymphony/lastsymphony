@@ -95,13 +95,13 @@
       </svg>
     </div>
     <div>
-      <h3 style="margin: 0; font-size: 20px;"><a href="https://github.com/lastsymphony/Testerweb" style="color: #58a6ff; text-decoration: none;">Testerweb</a></h3>
+      <h3 style="margin: 0; font-size: 20px;"><a href="https://github.com/lastsymphony/lastsymphony" style="color: #58a6ff; text-decoration: none;">lastsymphony</a></h3>
       <p style="margin: 5px 0; color: #8b949e;">Last updated repository</p>
     </div>
   </div>
   <div style="display: flex; gap: 15px; color: #c9d1d9;">
     <span>⭐ 0 stars</span>
-    <span>🔗 <a href="https://github.com/lastsymphony/Testerweb" style="color: #58a6ff;">View Repository</a></span>
+    <span>🔗 <a href="https://github.com/lastsymphony/lastsymphony" style="color: #58a6ff;">View Repository</a></span>
   </div>
 </div>
 
@@ -113,6 +113,27 @@
 </div>
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
+
+  <div style="width: 300px; padding: 15px; background-color: #161b22; border-radius: 10px; border: 1px solid #30363d;">
+    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+      <div style="width: 40px; height: 40px; background-color: #21262d; border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="#58a6ff">
+          <path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+          <path d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z"></path>
+        </svg>
+      </div>
+      <div>
+        <h4 style="margin: 0; font-size: 16px;"><a href="https://github.com/lastsymphony/lastsymphony" style="color: #58a6ff; text-decoration: none;">lastsymphony</a></h4>
+        <p style="margin: 0; color: #8b949e; font-size: 12px;">JavaScript</p>
+      </div>
+    </div>
+    <p style="margin: 10px 0; color: #c9d1d9; font-size: 14px;">Config files for my GitHub profile.</p>
+    <div style="display: flex; justify-content: space-between; color: #8b949e; font-size: 12px;">
+      <span>⭐ 0</span>
+      <span>🍴 0</span>
+      <span>👁️ 0</span>
+    </div>
+  </div>
 
   <div style="width: 300px; padding: 15px; background-color: #161b22; border-radius: 10px; border: 1px solid #30363d;">
     <div style="display: flex; align-items: center; margin-bottom: 10px;">
@@ -149,27 +170,6 @@
       </div>
     </div>
     <p style="margin: 10px 0; color: #c9d1d9; font-size: 14px;">No description available</p>
-    <div style="display: flex; justify-content: space-between; color: #8b949e; font-size: 12px;">
-      <span>⭐ 0</span>
-      <span>🍴 0</span>
-      <span>👁️ 0</span>
-    </div>
-  </div>
-
-  <div style="width: 300px; padding: 15px; background-color: #161b22; border-radius: 10px; border: 1px solid #30363d;">
-    <div style="display: flex; align-items: center; margin-bottom: 10px;">
-      <div style="width: 40px; height: 40px; background-color: #21262d; border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="#58a6ff">
-          <path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
-          <path d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z"></path>
-        </svg>
-      </div>
-      <div>
-        <h4 style="margin: 0; font-size: 16px;"><a href="https://github.com/lastsymphony/lastsymphony" style="color: #58a6ff; text-decoration: none;">lastsymphony</a></h4>
-        <p style="margin: 0; color: #8b949e; font-size: 12px;">JavaScript</p>
-      </div>
-    </div>
-    <p style="margin: 10px 0; color: #c9d1d9; font-size: 14px;">Config files for my GitHub profile.</p>
     <div style="display: flex; justify-content: space-between; color: #8b949e; font-size: 12px;">
       <span>⭐ 0</span>
       <span>🍴 0</span>
@@ -216,7 +216,7 @@
 ---
 
 <div align="center">
-  <p>⏳ Last updated: <code>2025-11-03 05:08:23 WIB</code></p>
+  <p>⏳ Last updated: <code>2025-11-03 07:48:28 WIB</code></p>
   <p>Generated automatically with ❤️ • Stay hydrated 💧</p>
 </div>
 
