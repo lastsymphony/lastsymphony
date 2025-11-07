@@ -95,13 +95,13 @@
       </svg>
     </div>
     <div>
-      <h3 style="margin: 0; font-size: 20px;"><a href="https://github.com/lastsymphony/NekopoiScrapper" style="color: #58a6ff; text-decoration: none;">NekopoiScrapper</a></h3>
+      <h3 style="margin: 0; font-size: 20px;"><a href="https://github.com/lastsymphony/lastsymphony" style="color: #58a6ff; text-decoration: none;">lastsymphony</a></h3>
       <p style="margin: 5px 0; color: #8b949e;">Last updated repository</p>
     </div>
   </div>
   <div style="display: flex; gap: 15px; color: #c9d1d9;">
     <span>⭐ 0 stars</span>
-    <span>🔗 <a href="https://github.com/lastsymphony/NekopoiScrapper" style="color: #58a6ff;">View Repository</a></span>
+    <span>🔗 <a href="https://github.com/lastsymphony/lastsymphony" style="color: #58a6ff;">View Repository</a></span>
   </div>
 </div>
 
@@ -216,7 +216,7 @@
 ---
 
 <div align="center">
-  <p>⏳ Last updated: <code>2025-11-07 10:04:15 WIB</code></p>
+  <p>⏳ Last updated: <code>2025-11-07 11:12:32 WIB</code></p>
   <p>Generated automatically with ❤️ • Stay hydrated 💧</p>
 </div>
 
