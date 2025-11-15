@@ -78,7 +78,7 @@
     <p style="margin: 5px 0 0; color: #8b949e;">Top Language</p>
   </div>
   <div style="flex: 1; min-width: 200px; padding: 15px; background-color: #161b22; border-radius: 8px; text-align: center;">
-    <h3 style="margin: 0; color: #58a6ff;">107</h3>
+    <h3 style="margin: 0; color: #58a6ff;">104</h3>
     <p style="margin: 5px 0 0; color: #8b949e;">Commits (30 days)</p>
   </div>
 </div>
@@ -216,7 +216,7 @@
 ---
 
 <div align="center">
-  <p>⏳ Last updated: <code>2025-11-15 10:00:08 WIB</code></p>
+  <p>⏳ Last updated: <code>2025-11-15 11:11:20 WIB</code></p>
   <p>Generated automatically with ❤️ • Stay hydrated 💧</p>
 </div>
 
