@@ -95,13 +95,13 @@
       </svg>
     </div>
     <div>
-      <h3 style="margin: 0; font-size: 20px;"><a href="https://github.com/lastsymphony/Testerweb" style="color: #58a6ff; text-decoration: none;">Testerweb</a></h3>
+      <h3 style="margin: 0; font-size: 20px;"><a href="https://github.com/lastsymphony/lastsymphony" style="color: #58a6ff; text-decoration: none;">lastsymphony</a></h3>
       <p style="margin: 5px 0; color: #8b949e;">Last updated repository</p>
     </div>
   </div>
   <div style="display: flex; gap: 15px; color: #c9d1d9;">
     <span>⭐ 0 stars</span>
-    <span>🔗 <a href="https://github.com/lastsymphony/Testerweb" style="color: #58a6ff;">View Repository</a></span>
+    <span>🔗 <a href="https://github.com/lastsymphony/lastsymphony" style="color: #58a6ff;">View Repository</a></span>
   </div>
 </div>
 
@@ -123,11 +123,11 @@
         </svg>
       </div>
       <div>
-        <h4 style="margin: 0; font-size: 16px;"><a href="https://github.com/lastsymphony/Testerweb" style="color: #58a6ff; text-decoration: none;">Testerweb</a></h4>
-        <p style="margin: 0; color: #8b949e; font-size: 12px;">HTML</p>
+        <h4 style="margin: 0; font-size: 16px;"><a href="https://github.com/lastsymphony/lastsymphony" style="color: #58a6ff; text-decoration: none;">lastsymphony</a></h4>
+        <p style="margin: 0; color: #8b949e; font-size: 12px;">JavaScript</p>
       </div>
     </div>
-    <p style="margin: 10px 0; color: #c9d1d9; font-size: 14px;">No description available</p>
+    <p style="margin: 10px 0; color: #c9d1d9; font-size: 14px;">Config files for my GitHub profile.</p>
     <div style="display: flex; justify-content: space-between; color: #8b949e; font-size: 12px;">
       <span>⭐ 0</span>
       <span>🍴 0</span>
@@ -144,11 +144,11 @@
         </svg>
       </div>
       <div>
-        <h4 style="margin: 0; font-size: 16px;"><a href="https://github.com/lastsymphony/lastsymphony" style="color: #58a6ff; text-decoration: none;">lastsymphony</a></h4>
-        <p style="margin: 0; color: #8b949e; font-size: 12px;">JavaScript</p>
+        <h4 style="margin: 0; font-size: 16px;"><a href="https://github.com/lastsymphony/Testerweb" style="color: #58a6ff; text-decoration: none;">Testerweb</a></h4>
+        <p style="margin: 0; color: #8b949e; font-size: 12px;">HTML</p>
       </div>
     </div>
-    <p style="margin: 10px 0; color: #c9d1d9; font-size: 14px;">Config files for my GitHub profile.</p>
+    <p style="margin: 10px 0; color: #c9d1d9; font-size: 14px;">No description available</p>
     <div style="display: flex; justify-content: space-between; color: #8b949e; font-size: 12px;">
       <span>⭐ 0</span>
       <span>🍴 0</span>
@@ -216,7 +216,7 @@
 ---
 
 <div align="center">
-  <p>⏳ Last updated: <code>2025-11-25 23:13:14 WIB</code></p>
+  <p>⏳ Last updated: <code>2025-11-26 01:15:42 WIB</code></p>
   <p>Generated automatically with ❤️ • Stay hydrated 💧</p>
 </div>
 
